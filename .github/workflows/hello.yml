@@ -8,18 +8,10 @@ on:
     branches:
       - master
 jobs:
-  hello_world_job:
+
+  slack_status_job:
     runs-on: ubuntu-18.04
     steps:
-      - name: Say hello
-        run: |
-          echo "Hello World!"
-      - name: Now is
-        run: |
-          date
-      - name: Directory content
-        run: |
-          ls -l
       - uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
